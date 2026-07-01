@@ -30,8 +30,8 @@ header.bar{background:var(--navy);position:sticky;top:0;z-index:50}
 
 .hero{padding:64px 0 36px;position:relative;overflow:hidden}
 .hero .dot{width:12px;height:12px;border-radius:50%;background:var(--crimson);margin-bottom:22px}
-.hero h1{font-size:clamp(30px,4.6vw,52px);max-width:18ch}
-.hero p.lede{margin-top:18px;font-size:18px;color:var(--muted);max-width:60ch}
+.hero h1{font-size:clamp(30px,4.6vw,52px);max-width:100%;white-space:nowrap}
+.hero p.lede{margin-top:18px;font-size:18px;color:var(--muted);max-width:100%}
 .hero .meta{margin-top:26px;display:flex;gap:28px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
 .hero .meta b{color:var(--navy);font-weight:600}
 .ghost{position:absolute;right:-40px;top:20px;font-family:var(--display);font-weight:700;font-size:200px;color:var(--navy);opacity:.04;user-select:none;pointer-events:none;line-height:.8}
@@ -166,6 +166,7 @@ footer{background:var(--navy);margin-top:70px;padding:40px 0}
 footer .brand-logo{height:24px}
 
 @media(max-width:880px){
+  .hero h1{white-space:normal;font-size:clamp(26px,7vw,40px)}
   .readiness{grid-template-columns:1fr;text-align:center}
   .gauge-wrap{margin:0 auto}
   .radar-box{grid-template-columns:1fr}
