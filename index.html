@@ -1,3 +1,6 @@
+
+
+Index 3 · HTML
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -21,14 +24,32 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:var(--body);color:var(--ink);background:#f6f8fc;line-height:1.55;-webkit-font-smoothing:antialiased}
-.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 48px}
 h1,h2,h3,h4{font-family:var(--display);font-weight:600;letter-spacing:-.01em;line-height:1.12;color:var(--navy)}
 .eyebrow{font-family:var(--display);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
-
-header.bar{background:var(--navy);position:sticky;top:0;z-index:50}
-.bar .wrap{display:flex;align-items:center;height:72px}
-.brand-logo{height:30px;width:auto;display:block}
-
+ 
+/* NAV — стилі хедера з index 2 (sticky, щоб структуру не ламати) */
+header.bar{
+  position:sticky;top:0;left:0;right:0;
+  background:var(--navy);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  z-index:100;padding:0 48px;height:64px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.nav-logo{display:flex;align-items:center;padding:8px 0}
+.nav-logo svg{height:24px;width:auto;display:block;color:var(--blue-2)}
+.nav-links{display:flex;gap:4px;list-style:none}
+.nav-links a{
+  font-size:13px;font-weight:500;
+  color:rgba(255,255,255,0.75);
+  text-decoration:none;padding:8px 14px;
+  border-radius:8px;transition:all 0.2s;white-space:nowrap;
+}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.12)}
+.nav-links a.active{color:var(--white)}
+.brand-logo{height:24px;width:auto;display:block}
+ 
 .hero{padding:64px 0 36px;position:relative;overflow:hidden}
 .hero .dot{width:12px;height:12px;border-radius:50%;background:var(--crimson);margin-bottom:22px}
 .hero h1{font-size:clamp(30px,4.6vw,52px);max-width:100%;white-space:nowrap}
@@ -36,7 +57,7 @@ header.bar{background:var(--navy);position:sticky;top:0;z-index:50}
 .hero .meta{margin-top:26px;display:flex;gap:28px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
 .hero .meta b{color:var(--navy);font-weight:600}
 .ghost{position:absolute;right:-40px;top:20px;font-family:var(--display);font-weight:700;font-size:200px;color:var(--navy);opacity:.04;user-select:none;pointer-events:none;line-height:.8}
-
+ 
 .readiness{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:center;
   background:var(--navy);border-radius:24px;padding:40px;color:#fff;margin:8px 0 12px}
 .readiness h2{color:#fff}
@@ -47,7 +68,7 @@ header.bar{background:var(--navy);position:sticky;top:0;z-index:50}
 .rd-stat{display:flex;gap:26px;margin-top:22px;flex-wrap:wrap}
 .rd-stat .s{font-family:var(--display);font-size:26px;font-weight:700;color:#fff}
 .rd-stat .l{font-size:12px;color:var(--blue);letter-spacing:.06em}
-
+ 
 .tabs{display:flex;gap:6px;flex-wrap:wrap;margin:46px 0 0;border-bottom:1px solid var(--line)}
 .tab{font-family:var(--display);font-weight:500;font-size:15px;color:var(--muted);background:none;border:0;
   padding:14px 18px;cursor:pointer;border-bottom:2px solid transparent;transition:.2s;border-radius:8px 8px 0 0}
@@ -56,11 +77,11 @@ header.bar{background:var(--navy);position:sticky;top:0;z-index:50}
 .panel{display:none;padding:34px 0 10px;animation:fade .4s ease}
 .panel.active{display:block}
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
+ 
 .shead{margin-bottom:22px}
 .shead h2{font-size:clamp(24px,3vw,34px)}
 .shead p{color:var(--muted);margin-top:8px;max-width:64ch}
-
+ 
 .cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:6px}
 .ccard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;cursor:pointer;
   transition:.22s;position:relative;overflow:hidden}
@@ -80,7 +101,7 @@ header.bar{background:var(--navy);position:sticky;top:0;z-index:50}
 .t-weak{background:var(--crimson-soft);color:var(--crimson)}
 .ccard .sub{font-size:11.5px;color:var(--muted);margin-top:12px;display:flex;flex-direction:column;gap:4px}
 .ccard .sub span{display:flex;justify-content:space-between}
-
+ 
 .radar-box{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;margin-top:26px;
   display:grid;grid-template-columns:1fr 320px;gap:30px;align-items:center}
 .radar-legend li{list-style:none;display:flex;align-items:center;justify-content:space-between;
@@ -89,7 +110,7 @@ header.bar{background:var(--navy);position:sticky;top:0;z-index:50}
 .radar-legend .nm{display:flex;align-items:center;gap:10px}
 .radar-legend .pin{width:9px;height:9px;border-radius:50%;background:var(--crimson)}
 .radar-legend .v{font-family:var(--display);font-weight:700}
-
+ 
 /* checklist */
 .cl-nav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
 .cl-btn{font-family:var(--display);font-weight:500;font-size:13.5px;border:1px solid var(--line);background:#fff;
@@ -122,7 +143,7 @@ header.bar{background:var(--navy);position:sticky;top:0;z-index:50}
 .qbody{max-height:0;overflow:hidden;transition:max-height .3s ease;color:var(--muted);font-size:14px}
 .qbody div{padding:0 18px 18px 54px;white-space:pre-line}
 .qitem.open .qbody{max-height:400px}
-
+ 
 .swot{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:6px}
 .sq{border-radius:var(--r);padding:24px;border:1px solid var(--line)}
 .sq h3{font-size:16px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
@@ -134,7 +155,7 @@ header.bar{background:var(--navy);position:sticky;top:0;z-index:50}
 .sw-w{background:var(--crimson-soft)} .sw-w h3{color:var(--crimson)}
 .sw-o{background:var(--blue-2)} .sw-o h3{color:var(--navy)}
 .sw-t{background:var(--mist)} .sw-t h3{color:var(--muted)}
-
+ 
 .bn{display:flex;flex-direction:column;gap:16px;margin-top:6px}
 .bncard{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;
   display:grid;grid-template-columns:64px 1fr;transition:.2s}
@@ -147,7 +168,7 @@ header.bar{background:var(--navy);position:sticky;top:0;z-index:50}
 .bnsol{background:var(--mist);border-radius:var(--r-sm);padding:14px 16px;font-size:14px;display:flex;gap:12px}
 .bnsol .ar{color:var(--crimson);font-weight:700;font-family:var(--display)}
 .bnsol b{color:var(--navy)}
-
+ 
 .tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-top:6px}
 .tcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:.2s}
 .tcard:hover{box-shadow:var(--sh);border-color:var(--blue)}
@@ -162,10 +183,22 @@ header.bar{background:var(--navy);position:sticky;top:0;z-index:50}
 .chip{font-size:12px;padding:4px 10px;border-radius:16px;background:var(--mist);color:#33405e}
 .chip.lim{background:var(--crimson-soft);color:var(--crimson)}
 .tcard .role{font-size:13px;color:var(--muted);margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
-
-footer{background:var(--navy);margin-top:70px;padding:40px 0}
-footer .brand-logo{height:24px}
-
+ 
+footer{background:var(--navy);margin-top:70px;padding:38px 0}
+footer .wrap{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+footer .brand-logo{height:24px;color:var(--blue-2)}
+.footer-text{font-size:13px;color:rgba(255,255,255,0.4)}
+ 
+@media (max-width:1080px) and (min-width:901px){
+  header.bar{padding:0 28px}
+  .nav-links{gap:0}
+  .nav-links a{font-size:12px;padding:8px 10px}
+}
+@media(max-width:900px){
+  header.bar{padding:0 16px}
+  .nav-links{display:none}
+  footer .wrap{flex-direction:column;text-align:center}
+}
 @media(max-width:880px){
   .hero h1{white-space:normal;font-size:clamp(26px,7vw,40px)}
   .readiness{grid-template-columns:1fr;text-align:center}
@@ -178,7 +211,7 @@ footer .brand-logo{height:24px}
 </style>
 </head>
 <body>
-<header class="bar"><div class="wrap"><svg class="brand-logo" width="647" height="126" viewBox="0 0 647 126" fill="none" xmlns="http://www.w3.org/2000/svg">
+<header class="bar"><div class="nav-logo"><svg class="brand-logo" width="647" height="126" viewBox="0 0 647 126" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M289.292 29.0528H318.864L336.681 83.7032L351.927 29.0528H379.295L351.008 121.125H323.273L303.435 61.6578L283.965 121.125H255.678L227.024 29.0528H256.045L271.291 83.518L289.292 29.0528Z" fill="#D6DFEB"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M428.019 126C454.715 126 476.356 104.173 476.356 77.2485C476.356 50.3236 454.715 28.4969 428.019 28.4969C401.323 28.4969 379.682 50.3236 379.682 77.2485C379.682 104.173 401.323 126 428.019 126ZM428.019 96.7491C438.698 96.7491 447.354 88.0184 447.354 77.2485C447.354 66.4785 438.698 57.7478 428.019 57.7478C417.341 57.7478 408.684 66.4785 408.684 77.2485C408.684 88.0184 417.341 96.7491 428.019 96.7491Z" fill="#D6DFEB"/>
 <path d="M183.393 101.902C188.561 94.1421 191.576 84.8024 191.576 74.7524C191.576 53.8128 178.487 35.9566 160.11 29.0527H170.865C175.519 29.0527 185.009 29.0527 185.009 29.0527C185.009 29.0527 185.009 18.4931 185.009 14.047V6.70833L209.99 0V29.0527H227.807L227.439 53.6917H209.99V88.1493C209.99 94.5715 213.357 97.7826 220.092 97.7826C222.296 97.7826 224.745 97.4739 227.439 96.8564V120.199C224.011 121.928 219.174 122.792 212.928 122.792C203.499 122.792 196.03 120.137 190.519 114.826C186.984 111.342 184.609 107.034 183.393 101.902Z" fill="#D6DFEB"/>
@@ -186,8 +219,16 @@ footer .brand-logo{height:24px}
 <path d="M544.933 56.5176V28.7292H536.459C532.884 28.7292 529.402 29.8606 526.515 31.9599L513.891 41.1413V28.7292H486.89V120.801H514.809V57.2396L536.608 56.5176H544.933Z" fill="#D6DFEB"/>
 <path d="M161.167 75.6176C161.167 86.5121 152.331 95.3439 141.432 95.3439C130.533 95.3439 121.697 86.5121 121.697 75.6176C121.697 64.723 130.533 55.8912 141.432 55.8912C152.331 55.8912 161.167 64.723 161.167 75.6176Z" fill="#D6DFEB"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M98.4268 51.4301L98.8018 0H70.6798L70.3049 36.6975C66.3053 30.3259 57.9312 27.1401 45.1826 27.1401C32.059 27.1401 21.2477 31.7627 12.7486 41.0077C4.24954 50.1279 0 61.6842 0 75.6767C0 89.9191 4.37452 101.663 13.1236 110.908C21.8726 120.028 32.8714 124.588 46.12 124.588C51.6194 124.588 56.5564 123.589 60.9309 121.59C65.4304 119.466 68.805 116.78 71.0548 113.532C71.0548 116.53 71.3048 119.528 71.8047 122.527H99.1767C98.6768 117.03 98.4268 111.47 98.4268 105.848V99.805C94.3954 92.6586 92.0953 84.4066 92.0953 75.6176C92.0953 66.8285 94.3954 58.5765 98.4268 51.4301ZM28.6844 75.8641C28.6844 68.4931 30.6842 62.8086 34.6837 58.8107C38.8083 54.8129 43.8077 52.8139 49.6821 52.8139C55.5565 52.8139 60.4934 54.8129 64.493 58.8107C68.6176 62.8086 70.6798 68.4931 70.6798 75.8641C70.6798 83.2352 68.6176 88.9821 64.493 93.1049C60.4934 97.1028 55.5565 99.1017 49.6821 99.1017C43.8077 99.1017 38.8083 97.1028 34.6837 93.1049C30.6842 88.9821 28.6844 83.2352 28.6844 75.8641Z" fill="#D6DFEB"/>
-</svg></div></header>
-
+</svg></div>
+<ul class="nav-links">
+  <li><a href="#overview" data-p="overview">Огляд</a></li>
+  <li><a href="#checklist" data-p="checklist">Чек-лист</a></li>
+  <li><a href="#swot" data-p="swot">SWOT</a></li>
+  <li><a href="#bottlenecks" data-p="bottlenecks">Bottle necks</a></li>
+  <li><a href="#team" data-p="team">Команда</a></li>
+</ul>
+</header>
+ 
 <section class="hero"><div class="wrap">
   <div class="ghost">d•t</div>
   <div class="dot"></div>
@@ -195,7 +236,7 @@ footer .brand-logo{height:24px}
   <p class="lede">Зріз якості бізнес-систем і взаємодії функцій між собою та з клієнтом. Нижче — інтерактивна мапа компетенцій, повний чек-лист по кожному напрямку, bottle necks та команда змін.</p>
   <div class="meta"><span>Предмет діагностики: <b>якість взаємодії відповідальних за функції</b></span><span>Компетенцій: <b>5</b></span><span>Учасників: <b>8</b></span></div>
 </div></section>
-
+ 
 <div class="wrap">
   <div class="readiness">
     <div class="gauge-wrap"><div class="gauge" id="bigGauge"></div></div>
@@ -206,7 +247,7 @@ footer .brand-logo{height:24px}
       <div class="rd-stat" id="rdStat"></div>
     </div>
   </div>
-
+ 
   <nav class="tabs" role="tablist" id="tabs">
     <button class="tab" role="tab" aria-selected="true" data-p="overview">Огляд компетенцій</button>
     <button class="tab" role="tab" aria-selected="false" data-p="checklist">Чек-лист</button>
@@ -214,7 +255,7 @@ footer .brand-logo{height:24px}
     <button class="tab" role="tab" aria-selected="false" data-p="bottlenecks">Bottle necks</button>
     <button class="tab" role="tab" aria-selected="false" data-p="team">Команда</button>
   </nav>
-
+ 
   <section class="panel active" id="overview" role="tabpanel">
     <div class="shead"><h2>Рівень компетенції бізнес-систем</h2><p>Натисніть на картку, щоб підсвітити компетенцію на радарі. Колір показує рівень реалізації.</p></div>
     <div class="cgrid" id="cgrid"></div>
@@ -223,30 +264,30 @@ footer .brand-logo{height:24px}
       <ul class="radar-legend" id="radarLegend"></ul>
     </div>
   </section>
-
+ 
   <section class="panel" id="checklist" role="tabpanel">
     <div class="shead"><h2>Чек-лист діагностики</h2><p>Повні відповіді по всіх компетенціях. Оберіть напрямок, натисніть на питання, щоб розгорнути формулювання.</p></div>
     <div class="legend-mini"><span><i style="background:var(--ok)"></i> Так — реалізовано</span><span><i style="background:var(--crimson)"></i> Ні — точка росту</span></div>
     <div class="cl-nav" id="clNav"></div>
     <div id="clBlocks"></div>
   </section>
-
+ 
   <section class="panel" id="swot" role="tabpanel">
     <div class="shead"><h2>SWOT-зріз</h2><p>Сильні та слабкі сторони всередині, можливості та загрози ззовні.</p></div>
     <div class="swot" id="swotGrid"></div>
   </section>
-
+ 
   <section class="panel" id="bottlenecks" role="tabpanel">
     <div class="shead"><h2>ТОП-3 bottle necks</h2><p>Найбільші обмеження росту та рекомендовані рішення.</p></div>
     <div class="bn" id="bnList"></div>
   </section>
-
+ 
   <section class="panel" id="team" role="tabpanel">
     <div class="shead"><h2>Команда змін</h2><p>Ключові учасники, їхні сильні сторони, обмеження та роль у трансформації.</p></div>
     <div class="tgrid" id="tgrid"></div>
   </section>
 </div>
-
+ 
 <footer><div class="wrap"><svg class="brand-logo" width="647" height="126" viewBox="0 0 647 126" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M289.292 29.0528H318.864L336.681 83.7032L351.927 29.0528H379.295L351.008 121.125H323.273L303.435 61.6578L283.965 121.125H255.678L227.024 29.0528H256.045L271.291 83.518L289.292 29.0528Z" fill="#D6DFEB"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M428.019 126C454.715 126 476.356 104.173 476.356 77.2485C476.356 50.3236 454.715 28.4969 428.019 28.4969C401.323 28.4969 379.682 50.3236 379.682 77.2485C379.682 104.173 401.323 126 428.019 126ZM428.019 96.7491C438.698 96.7491 447.354 88.0184 447.354 77.2485C447.354 66.4785 438.698 57.7478 428.019 57.7478C417.341 57.7478 408.684 66.4785 408.684 77.2485C408.684 88.0184 417.341 96.7491 428.019 96.7491Z" fill="#D6DFEB"/>
@@ -255,14 +296,14 @@ footer .brand-logo{height:24px}
 <path d="M544.933 56.5176V28.7292H536.459C532.884 28.7292 529.402 29.8606 526.515 31.9599L513.891 41.1413V28.7292H486.89V120.801H514.809V57.2396L536.608 56.5176H544.933Z" fill="#D6DFEB"/>
 <path d="M161.167 75.6176C161.167 86.5121 152.331 95.3439 141.432 95.3439C130.533 95.3439 121.697 86.5121 121.697 75.6176C121.697 64.723 130.533 55.8912 141.432 55.8912C152.331 55.8912 161.167 64.723 161.167 75.6176Z" fill="#D6DFEB"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M98.4268 51.4301L98.8018 0H70.6798L70.3049 36.6975C66.3053 30.3259 57.9312 27.1401 45.1826 27.1401C32.059 27.1401 21.2477 31.7627 12.7486 41.0077C4.24954 50.1279 0 61.6842 0 75.6767C0 89.9191 4.37452 101.663 13.1236 110.908C21.8726 120.028 32.8714 124.588 46.12 124.588C51.6194 124.588 56.5564 123.589 60.9309 121.59C65.4304 119.466 68.805 116.78 71.0548 113.532C71.0548 116.53 71.3048 119.528 71.8047 122.527H99.1767C98.6768 117.03 98.4268 111.47 98.4268 105.848V99.805C94.3954 92.6586 92.0953 84.4066 92.0953 75.6176C92.0953 66.8285 94.3954 58.5765 98.4268 51.4301ZM28.6844 75.8641C28.6844 68.4931 30.6842 62.8086 34.6837 58.8107C38.8083 54.8129 43.8077 52.8139 49.6821 52.8139C55.5565 52.8139 60.4934 54.8129 64.493 58.8107C68.6176 62.8086 70.6798 68.4931 70.6798 75.8641C70.6798 83.2352 68.6176 88.9821 64.493 93.1049C60.4934 97.1028 55.5565 99.1017 49.6821 99.1017C43.8077 99.1017 38.8083 97.1028 34.6837 93.1049C30.6842 88.9821 28.6844 83.2352 28.6844 75.8641Z" fill="#D6DFEB"/>
-</svg></div></footer>
-
+</svg><div class="footer-text">Dotwork Strategies · Діагностика систем та готовності до масштабування</div></div></footer>
+ 
 <script>
 const DATA = {"overall": 0.5444444444, "comps": [{"id": "marketing", "name": "Маркетинг та бренд", "questions": [{"h": "Організаційна структура та експертиза по маркетингу.", "b": "Чи є в компанії системна і відповідальна людина (не власник), яка очолює маркетингову функцію та відповідає за її ефективність: планування, організацію, контроль, розвиток і керівництво командою?", "a": "НІ"}, {"h": "PR та медійна впізнаваність.", "b": "Чи налаштований у компанії регулярний PR через медіа, бізнес-події, клуби або лідерів думок для підвищення впізнаваності, довіри й залучення клієнтів?", "a": "ТАК"}, {"h": "Контент та соціальні мережі (SMM).", "b": "Чи є системна робота з контентом у соцмережах: регулярне оновлення контент-плану, публікації, створення інформаційних матеріалів (чеклісти, презентації, кейси)?", "a": "ТАК"}, {"h": "Performance-маркетинг та платна лідогенерація через побудовану воронку маркетингу.", "b": "Чи налаштовані стабільні канали платного трафіку: таргетинг у соцмережах, Google Ads, SEO, e-mail маркетинг, сайт як джерело лідів?", "a": "ТАК"}, {"h": "Маркетингові управлінські показники.", "b": "Чи відслідковуються у вашій компанії ключові маркетингові метрики, такі як: CAC - вартість залучення клієнта, ROMI - рентабельність інвестицій у маркетинг?", "a": "ТАК"}, {"h": "Маркетингова стратегія та управління.", "b": "Чи сформована в компанії маркетингова стратегія, що включає аналіз цільових аудиторій, позиціонування, канали просування, продуктові пріоритети та айдентику бренду, структуровану в бренд буці?", "a": "ТАК"}], "yes": 5, "max": 6}, {"id": "sales", "name": "Продажі", "subtracks": [{"name": "Будівництво", "questions": [{"h": "Організаційна структура та експертиза по продажам.", "b": "Чи є в компанії системна та відповідальна людина (не власник), яка очолює відділ продажу, керує командою, відповідає за планування, контроль, розвиток процесів та досягнення цілей?", "a": "ТАК"}, {"h": "Ролі в команді продажу.", "b": "Чи розподілені ролі в команді за функціоналом: hunter/лідогенератор, farmer, closer, retention-менеджер, менеджер контролю якості, асистент відділу продажу?", "a": "НІ"}, {"h": "Найм та розвиток команди продажів.", "b": "Чи впроваджені:, система мотивації та KPI для кожної ролі, адаптація новачків через LMS, регулярне навчання та розбір кейсів?", "a": "ТАК"}, {"h": "Воронка в CRM та інструменти.", "b": "Чи прописана деталізована воронка продажу та інтегрована в CRM? Чи всі точки контакту з клієнтом (дзвінки, відео, месенджери) фіксуються системно?", "a": "ТАК"}, {"h": "Звітність та планування продажів.", "b": "Чи проводиться регулярне планування продажів через оновлення декомпозиції? Чи налаштована звітність у форматі: план - факт - прогноз - відхилення - пофакторний аналіз?", "a": "ТАК"}, {"h": "Скрипти та стандарти продажів.", "b": "Чи розроблені й впроваджені скрипти продажів для всіх ключових ситуацій, з якими стикається команда?", "a": "ТАК"}], "yes": 5, "max": 6}, {"name": "Інвест. фонд", "questions": [{"h": "Організаційна структура та експертиза по продажам.", "b": "Чи є в компанії системна та відповідальна людина (не власник), яка очолює відділ продажу, керує командою, відповідає за планування, контроль, розвиток процесів та досягнення цілей?", "a": "ТАК"}, {"h": "Ролі в команді продажу.", "b": "Чи розподілені ролі в команді за функціоналом: hunter/лідогенератор, farmer, closer, retention-менеджер, менеджер контролю якості, асистент відділу продажу?", "a": "НІ"}, {"h": "Найм та розвиток команди продажів.", "b": "Чи впроваджені:, система мотивації та KPI для кожної ролі, адаптація новачків через LMS, регулярне навчання та розбір кейсів?", "a": "НІ"}, {"h": "Воронка в CRM та інструменти.", "b": "Чи прописана деталізована воронка продажу та інтегрована в CRM? Чи всі точки контакту з клієнтом (дзвінки, відео, месенджери) фіксуються системно?", "a": "НІ"}, {"h": "Звітність та планування продажів.", "b": "Чи проводиться регулярне планування продажів через оновлення декомпозиції? Чи налаштована звітність у форматі: план - факт - прогноз - відхилення - пофакторний аналіз?", "a": "НІ"}, {"h": "Скрипти та стандарти продажів.", "b": "Чи розроблені й впроваджені скрипти продажів для всіх ключових ситуацій, з якими стикається команда?", "a": "НІ"}], "yes": 1, "max": 6}, {"name": "Інвест. фонд (напрямок 2)", "questions": [{"h": "Організаційна структура та експертиза по продажам.", "b": "Чи є в компанії системна та відповідальна людина (не власник), яка очолює відділ продажу, керує командою, відповідає за планування, контроль, розвиток процесів та досягнення цілей?", "a": "ТАК"}, {"h": "Ролі в команді продажу.", "b": "Чи розподілені ролі в команді за функціоналом: hunter/лідогенератор, farmer, closer, retention-менеджер, менеджер контролю якості, асистент відділу продажу?", "a": "НІ"}, {"h": "Найм та розвиток команди продажів.", "b": "Чи впроваджені:, система мотивації та KPI для кожної ролі, адаптація новачків через LMS, регулярне навчання та розбір кейсів?", "a": "НІ"}, {"h": "Воронка в CRM та інструменти.", "b": "Чи прописана деталізована воронка продажу та інтегрована в CRM? Чи всі точки контакту з клієнтом (дзвінки, відео, месенджери) фіксуються системно?", "a": "НІ"}, {"h": "Звітність та планування продажів.", "b": "Чи проводиться регулярне планування продажів через оновлення декомпозиції? Чи налаштована звітність у форматі: план - факт - прогноз - відхилення - пофакторний аналіз?", "a": "НІ"}, {"h": "Скрипти та стандарти продажів.", "b": "Чи розроблені й впроваджені скрипти продажів для всіх ключових ситуацій, з якими стикається команда?", "a": "НІ"}], "yes": 1, "max": 6}], "yes": 7, "max": 18}, {"id": "finance", "name": "Фінанси та аналітика", "questions": [{"h": "Організаційна структура та експертиза по фінансам.", "b": "Чи є у вас фінансовий директор або фінансовий менеджер (не власник), який системно працює з аналітикою, підсвічує зони росту, ризики та забезпечує управлінське прийняття рішень на основі даних?", "a": "НІ"}, {"h": "Контроль прибутковості.", "b": "Чи знаєте ви, скільки чистого прибутку компанія заробила минулого місяця?\nЧи знаєте середню маржинальність за останній квартал?\nЧи прив’язана бонусна система команди до прибутку бізнесу?", "a": "ТАК"}, {"h": "Контроль грошових потоків.", "b": "У вас не виникають у вас труднощі з оплатами постачальникам, співробітникам, податковій, собі?\nЧи знаєте, скільки вам винні клієнти й скільки ви винні постачальникам?\nЧи знаєте, яку суму можна безпечно вивести з бізнесу?", "a": "НІ"}, {"h": "Планування та цілі.", "b": "Чи має компанія фінансовий план та річні/місячні цілі щодо виручки та прибутку?\nЧи бізнес виконує ці плани на задовільному рівні?", "a": "ТАК"}, {"h": "Аналіз відхилень (план-факт).", "b": "Чи регулярно проводиться щомісячний аналіз відхилень між планом і фактом?\nЧи обговорюються причини відхилень та коригуються дії?", "a": "ТАК"}, {"h": "Достовірність і регулярність звітності.", "b": "Чи отримуєте ви управлінську фактичну фінансову звітність як мінімум щомісяця до 5 числа?\nЧи впевнені ви, що ця звітність показує реальну ситуацію в компанії?", "a": "ТАК"}], "yes": 4, "max": 6}, {"id": "management", "name": "Менеджмент та команда", "questions": [{"h": "Організаційна структура та ролі.", "b": "Чи промальована та оновлюється організаційна структура з іменами, функціями та зоною відповідальності?\nЧи під кожну функцію прописано профіль ролі, питання на інтерв’ю, робочий журнал?", "a": "НІ"}, {"h": "HR та адаптація.", "b": "Чи є в команді системна людина, яка очолює HR-функцію (не власник), та відповідає за розвиток процесів рекрутингу, адаптації та навчання?\nЧи реалізована адаптація та навчання через LMS для всіх ролей?", "a": "НІ"}, {"h": "Operations-функція та управління процесами.", "b": "Чи є окрема людина (не власник), яка очолює operations-напрям і відповідає за планування, контроль і розвиток бізнес-процесів?\nЧи є описані, оновлювані, контрольовані бізнес-процеси та база знань?", "a": "ТАК"}, {"h": "Цифрові інструменти та прозорість", "b": "Чи впроваджені task-трекер та time-трекер?\nЧи ведеться централізований дашборд/таблиця з цілями, планами, фактами?", "a": "НІ"}, {"h": "Командна залученість та регулярний менеджмент.", "b": "Чи кожна команда має KPI / OKR, які регулярно переглядаються?\nЧи команда розуміє місію, бачення та пріоритети компанії?\nЧи проводимо щотижневі зустрічі керівників функцій та щомісячні загальні зустрічі з усією командою, з підготовленими презентаціями/таблицями план-факт?", "a": "НІ"}, {"h": "Культура зростання та діалогу.", "b": "Чи регулярно проводяться o2o за PDP-планами розвитку?\nЧи вимірюється eNPS?\nЧи проводимо щорічну стратегічну сесію із зовнішнім фасилітатором за участі ТОПів та лінійних працівників?", "a": "НІ"}], "yes": 1, "max": 6}, {"id": "service", "name": "Сервіс / Продукт / Виробництво", "questions": [{"h": "Організаційна структура та ролі.", "b": "Чи є в компанії окрема відповідальна особа (не власник), яка координує продукт / сервіс / виробництво та відповідає за його якість, своєчасність і відповідність очікуванням клієнта?", "a": "ТАК"}, {"h": "Продукт / Виробництво / Цінність.", "b": "Чи описаний у компанії бізнес-процес створення цінності для клієнта (value chain)?\nЧи має продуктова або виробнича функція чіткі цілі / KPI?", "a": "ТАК"}, {"h": "Досвід клієнта та зворотний зв’язок.", "b": "Чи вимірюється клієнтська задоволеність або успіх (наприклад, NPS, customer success rate)?\nЧи проводяться глибинні інтерв’ю, аналіз фідбеку і системні покращення продукту та сервісного процесу?", "a": "НІ"}, {"h": "Сервіс / Підтримка.", "b": "Чи є стандарти обслуговування клієнтів, чек-листи або SLA, за якими працює сервісна команда?", "a": "НІ"}, {"h": "Операційна аналітика та ефективність.", "b": "Чи вимірюються в компанії ключові операційні показники, такі як завантаженість персоналу, оборотність складу, юніт-економіка, собівартість продуктів / послуг?", "a": "ТАК"}, {"h": "Продуктовий розвиток і внутрішня експертиза.", "b": "Чи регулярно (хоча б раз на сезон) виводяться нові продукти або оновлення, і чи проводить виробництво/продуктова команда навчання по ним для всієї команди (продажі, сервіс, маркетинг)?", "a": "ТАК"}], "yes": 4, "max": 6}], "swot": {"strengths": ["Сильні сторони", ["наявна операційна система (ритм, бюджетування, контроль) як заслуга сильного COO", "сильний фаундер і ядро команди, які дають результат навіть у складних умовах", "робоча бізнес-модель (будівництво + продажі + інвестори) і якісний продукт"]], "weaknesses": ["Слабкості", ["відсутність загальнокомандного бачення місії компанії (будуємо більше по Фібоначі заради чого?)", "система тримається на конкретних людях, а не масштабованій моделі", "перевантаження ключових ролей (закупівлі, інвест, операційка)", "слабка формалізація взаємодії між функціями (комунікація, відповідальність) - комунікація через COO"]], "opportunities": ["Можливості", ["масштабування через командне стратегування та планування", "розвиток інвест-напрямку та напрямку обслуговуючої компанії як окремих компаній", "підсилення маркетингу → контрольований і прогнозований ріст"]], "threats": ["Загрози", ["залежність від COO та ключових людей (single point of failure)", "фінансові розриви через сезонність і ріст", "помилки на стиках відділів → ризики для продукту і репутації", "вигорання ключових працівників через \"ріст заради росту\""]]}, "bottlenecks": [{"t": "Відсутність спільного стратегічного бачення", "p": "Команда не відчуває особистої причетності до масштабування — бачення не зафіксоване, ролі юнітів і відповідальність за ріст не розподілені.", "s": "Провести сесію стратегічного планування (OPSP) з командою: зафіксувати спільне бачення, ролі юнітів і персональну відповідальність кожного керівника за ріст."}, {"t": "Ключові люди перевантажені операційкою", "p": "Команда залишається компактною без потрібного рівня керівників; роль інтегратора замкнена на COO. Це обмежує делегування і ріст.", "s": "Сформувати команду масштабування: цільова оргструктура з керівниками напрямків і бізнес-юнітів, частка витрат на команду, метрика КЕП (коефіцієнт ефективності праці)."}, {"t": "Бізнес-юніти не розвиваються як окремі одиниці", "p": "Попри підтверджене MVP (фонд і сервісна компанія), на кожен напрямок виділено замало людей — це обмежує масштабування і відповідальність за результат.", "s": "Виділити ключові бізнес-юніти як окремі P&L одиниці з відповідальними керівниками, командами й цілями — перевести з режиму «функції» в режим «бізнесу»."}], "team": [{"n": "Андрій", "r": "CEO / власник", "str": ["Сильне підприємницьке бачення", "Запуск і масштабування проектів", "Драйв і результат-орієнтованість", "Відкритість"], "lim": ["GR"], "role": "Головний драйвер змін, визначає правила гри, лідер команди"}, {"n": "Станіслав", "r": "COO / CFO", "str": ["Контроль фінансів і будівництва", "Системність у цифрах", "Регулярний ритм зустрічей"], "lim": ["Перевантаження", "Немає повноцінної операційної системи", "Слабка декомпозиція відповідальності"], "role": "Інтегратор системи, власник операційної моделі, ключ до масштабування"}, {"n": "Валерій", "r": "Керівник департаменту будівництва", "str": ["Стабільні бригади", "Контроль якості", "Сильна культура"], "lim": ["Нестача кваліфікованих виконробів", "Складність масштабування через менеджмент", "Залежність від фінансів"], "role": "Відповідає за delivery продукту, впливає на строки/якість і маржу"}, {"n": "Віктор", "r": "Head of Sales (нерухомість)", "str": ["Потужний потік лідів", "Досвід у продажах", "Орієнтація на клієнта"], "lim": ["Перевантаження команди", "Відсутність ролей", "Слабка синхронізація з відділами"], "role": "Драйвер виручки, впливає на кешфлоу і конверсію"}, {"n": "Андрій", "r": "Head of Investment", "str": ["Сильний інвест-продукт", "Довіра інвесторів", "Масштабування (UK)"], "lim": ["Перевантаження", "Немає бекофісу", "Слабка системність"], "role": "Джерело фінансування росту, новий напрямок масштабування"}, {"n": "Марина", "r": "Закупівлі", "str": ["Веде процеси щоденно", "Контроль оплат і таблиць", "Відповідальність"], "lim": ["Перевантаження", "Відсутність команди", "Залежність від керівництва"], "role": "Bottle neck в операційці, впливає на безперервність будівництва"}, {"n": "Ірина", "r": "SD Service", "str": ["Відповідальність", "Клієнтоорієнтованість", "Тримає операційку сама"], "lim": ["1 людина на 200 будинків", "Ефективність оплат (30%)", "Відсутність процесів і команди"], "role": "Впливає на бренд і retention — слабке місце зараз"}, {"n": "Анна", "r": "Архітектор", "str": ["Контроль продукту", "Повний цикл мислення", "Якість"], "lim": ["Немає KPI", "Перевантаження"], "role": "Зв'язка продукт ↔ продажі, впливає на цінність продукту"}]};
 const TAU=Math.PI*2;
 function lvl(p){return p>=0.7?'strong':p>=0.45?'mid':'weak'}
 function lvlWord(l){return l==='strong'?'Сильна сторона':l==='mid'?'Потребує підсилення':'Точка росту'}
-
+ 
 function donut(el,pct,size,stroke,color){
   const r=(size-stroke)/2,c=size/2,circ=TAU*r;
   el.innerHTML=`<svg viewBox="0 0 ${size} ${size}" width="${size}" height="${size}">
@@ -282,7 +323,7 @@ document.getElementById('rdStat').innerHTML=
  `<div><div class="s">${strongN}/5</div><div class="l">сильних напрямків</div></div>
   <div><div class="s">${weakN}/5</div><div class="l">критичних зон</div></div>
   <div><div class="s">${DATA.bottlenecks.length}</div><div class="l">bottle necks</div></div>`;
-
+ 
 /* cards */
 const cg=document.getElementById('cgrid');
 DATA.comps.forEach((c,i)=>{
@@ -302,7 +343,7 @@ DATA.comps.forEach((c,i)=>{
   d.addEventListener('mouseleave',()=>highlight(-1));
   d.addEventListener('focus',()=>highlight(i));
 });
-
+ 
 /* radar */
 const RS=320,RC=RS/2,RR=110;
 function radarPoint(idx,frac){const a=-Math.PI/2+idx*TAU/DATA.comps.length;return[RC+Math.cos(a)*RR*frac,RC+Math.sin(a)*RR*frac]}
@@ -323,7 +364,7 @@ const rl=document.getElementById('radarLegend');
 DATA.comps.forEach((c,i)=>{const p=c.yes/c.max;const li=document.createElement('li');
   li.innerHTML=`<span class="nm"><span class="pin"></span>${c.name}</span><span class="v lvl-${lvl(p)}">${Math.round(p*100)}%</span>`;
   li.addEventListener('mouseenter',()=>highlight(i));li.addEventListener('mouseleave',()=>highlight(-1));rl.appendChild(li)});
-
+ 
 /* ---- full checklist ---- */
 function qItemHtml(x,i){const yes=x.a==='ТАК';
   return `<div class="qitem"><div class="qhead"><span class="ix">${i+1}</span><span class="qt">${x.h}</span>
@@ -341,7 +382,7 @@ DATA.comps.forEach((c,ci)=>{
     document.getElementById('clb-'+ci).classList.add('show');
   });
   clNav.appendChild(btn);
-
+ 
   const block=document.createElement('div');block.className='cl-block'+(ci===0?' show':'');block.id='clb-'+ci;
   if(c.subtracks){
     // subnav
@@ -366,18 +407,18 @@ clBlocks.addEventListener('click',e=>{
     document.getElementById('st-'+ci+'-'+si).classList.add('show');
   }
 });
-
+ 
 /* swot */
 const sw=DATA.swot,sg=document.getElementById('swotGrid');
 function swq(cls,title,items){return `<div class="sq ${cls}"><h3><span class="d" style="background:currentColor"></span>${title}</h3><ul>${items.map(i=>`<li>${i}</li>`).join('')}</ul></div>`}
 sg.innerHTML=swq('sw-s','Сильні сторони',sw.strengths[1])+swq('sw-w','Слабкості',sw.weaknesses[1])+swq('sw-o','Можливості',sw.opportunities[1])+swq('sw-t','Загрози',sw.threats[1]);
-
+ 
 /* bottlenecks */
 const bn=document.getElementById('bnList');
 DATA.bottlenecks.forEach((b,i)=>{const d=document.createElement('div');d.className='bncard';
   d.innerHTML=`<div class="bnnum">${i+1}</div><div class="bnbody"><h3>${b.t}</h3><p class="prob">${b.p}</p>
    <div class="bnsol"><span class="ar">→</span><span><b>Рішення:</b> ${b.s}</span></div></div>`;bn.appendChild(d)});
-
+ 
 /* team */
 const tg=document.getElementById('tgrid');
 DATA.team.forEach(t=>{const d=document.createElement('div');d.className='tcard';
@@ -385,16 +426,24 @@ DATA.team.forEach(t=>{const d=document.createElement('div');d.className='tcard';
    <div class="sec"><div class="lab">Сильні сторони</div><div class="chips">${t.str.map(s=>`<span class="chip">${s}</span>`).join('')}</div></div>
    <div class="sec"><div class="lab">Обмеження</div><div class="chips">${t.lim.map(s=>`<span class="chip lim">${s}</span>`).join('')}</div></div>
    <div class="role">${t.role}</div>`;tg.appendChild(d)});
-
+ 
 /* tabs */
 const tabs=document.getElementById('tabs');
-tabs.addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;
-  [...tabs.children].forEach(t=>t.setAttribute('aria-selected','false'));
-  b.setAttribute('aria-selected','true');
+const navLinks=document.querySelectorAll('.nav-links a');
+function selectTab(pid){
+  [...tabs.children].forEach(t=>t.setAttribute('aria-selected',t.dataset.p===pid?'true':'false'));
   document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-  document.getElementById(b.dataset.p).classList.add('active');
-  if(b.dataset.p==='overview')buildRadar(-1);
-});
+  document.getElementById(pid).classList.add('active');
+  navLinks.forEach(a=>a.classList.toggle('active',a.dataset.p===pid));
+  if(pid==='overview')buildRadar(-1);
+}
+tabs.addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;selectTab(b.dataset.p);});
+navLinks.forEach(a=>a.addEventListener('click',e=>{
+  e.preventDefault();
+  selectTab(a.dataset.p);
+  document.getElementById('tabs').scrollIntoView({behavior:'smooth',block:'start'});
+}));
+navLinks[0].classList.add('active');
 </script>
 </body>
 </html>
